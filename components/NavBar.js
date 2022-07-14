@@ -10,7 +10,11 @@ export default function NavBar() {
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Link passHref href="/">
-          <Navbar.Brand>Got Jokes!</Navbar.Brand>
+          <Navbar.Brand style={{
+            color: 'lightpink',
+          }}
+          >FUNNY BONES
+          </Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
