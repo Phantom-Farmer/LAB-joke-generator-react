@@ -11,7 +11,11 @@ function Home() {
         margin: '0 auto',
       }}
     >
-      <h1>Welcome to Funny Bones!</h1>
+      <h1 style={{
+        color: 'purple',
+      }}
+      >Welcome to Funny Bones!
+      </h1>
       <div>
         <Joker />
       </div>

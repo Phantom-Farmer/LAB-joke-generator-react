@@ -1,13 +1,30 @@
-import React from 'react';
+import { useState } from 'react';
 import getJoke from '../api/jokeData';
 
 function Joker() {
+  const [tell, setTell] = useState({});
+
+  const [laugh, setLaugh] = useState('Get a Joke');
+
   const clicker1 = () => {
-    getJoke().then((joke) => (joke.setup));
+    if (laugh === 'Get a Joke') {
+      getJoke().then(setTell).then(() => {
+        setLaugh('Bahahahaha!');
+      });
+    } else if (laugh === 'How bout another?') {
+      getJoke().then(setTell).then(() => {
+        setLaugh('Bahahahaha!');
+      });
+    } else if (laugh === 'Bahahahaha!') {
+      setLaugh('How bout another?');
+    }
   };
+
   return (
     <>
-      <button type="button" onClick={clicker1}>Get a Joke</button>
+      <h1>{laugh === 'Get a Joke' ? '' : tell.setup}</h1>
+      <h1>{laugh === 'How bout another?' ? tell.delivery : ''}</h1>
+      <button type="button" onClick={clicker1}>{laugh}</button>
     </>
   );
 }
