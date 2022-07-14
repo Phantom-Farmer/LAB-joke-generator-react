@@ -9,13 +9,13 @@ function Joker() {
   const clicker1 = () => {
     if (laugh === 'Get a Joke') {
       getJoke().then(setTell).then(() => {
-        setLaugh('Bahahahaha!');
+        setLaugh('???');
       });
     } else if (laugh === 'How bout another?') {
       getJoke().then(setTell).then(() => {
-        setLaugh('Bahahahaha!');
+        setLaugh('???');
       });
-    } else if (laugh === 'Bahahahaha!') {
+    } else if (laugh === '???') {
       setLaugh('How bout another?');
     }
   };
